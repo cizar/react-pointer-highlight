@@ -19,7 +19,7 @@ export default class extends React.Component {
   }
 
   static defaultProps = {
-    color: 'white',
+    color: 'DodgerBlue',
     size: 120,
     duration: 20
   }
