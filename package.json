@@ -1,0 +1,55 @@
+{
+  "name": "react-pointer-highlight",
+  "version": "0.0.1",
+  "description": "Makes mouse clicks visible",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "build:lib": "babel src --out-dir lib",
+    "build:umd": "cross-env NODE_ENV=development webpack src/index.js dist/react-pointer-highlight.js",
+    "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/react-pointer-highlight.min.js",
+    "clean": "rimraf lib dist",
+    "prepublish": "npm run rebuild",
+    "rebuild": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cizar/react-pointer-highlight.git"
+  },
+  "keywords": [
+    "react",
+    "pointer",
+    "highlight"
+  ],
+  "author": "Cesar Kastli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cizar/react-pointer-highlight/issues"
+  },
+  "homepage": "https://github.com/cizar/react-pointer-highlight#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-check-es2015-constants": "^6.8.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.18.0",
+    "babel-plugin-transform-es2015-classes": "^6.18.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-es2015-parameters": "^6.18.0",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.18.0",
+    "babel-plugin-transform-es2015-spread": "^6.8.0",
+    "babel-plugin-transform-es2015-template-literals": "^6.8.0",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "cross-env": "^3.1.3",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.3"
+  },
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0 || ^15.4.0-0"
+  }
+}
